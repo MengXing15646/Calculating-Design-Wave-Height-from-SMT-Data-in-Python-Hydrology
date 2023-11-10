@@ -11,7 +11,7 @@
 ```pip
 pip install openpyxl
 ```
-在pycharm执行粘贴函数.py文件<br>
+在pycharm执行粘贴函数.py文件，
 如下：
 ```python
 import openpyxl
@@ -30,4 +30,8 @@ for row in sheet.iter_rows(min_row=1, max_row=sheet.max_row, min_col=column, max
 # 保存更改
 workbook.save('output.xlsx')
 ```
-其会在你上传文件的第9列的每一个格内粘贴`=COUNTIF(E2:E11592,"<15")-COUNTIF(E2:E11592,"<14.5`,接着我们可以使用其他文件修改范围数字
+其会在你上传文件的第9列的每一个格内粘贴`=COUNTIF(E2:E11592,"<15")-COUNTIF(E2:E11592,"<14.5`,接着我们可以使用其他文件修改范围数字<br>
+效果如下图
+![](https://github.com/MengXing15646/Calculating-Design-Wave-Height-from-SMT-Data-in-Python-Hydrology/blob/master/1.png)
+
+
