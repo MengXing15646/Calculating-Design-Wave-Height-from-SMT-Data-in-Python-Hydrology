@@ -63,7 +63,8 @@ for row in sheet.iter_rows(min_row=1, max_row=sheet.max_row, min_col=column_i, m
 workbook.save('output.xlsx')
 ```
 执行完毕后，`<15`修改成了对应G列的数字<br>
-接着，修改`column_g = 7`为`column_g = 8`,<br>
+接着我们尝试修改代码，将`<14.5`修改为对应H列的数字<br>
+修改`column_g = 7`为`column_g = 8`,<br>
 修改`formula = re.sub(r'<15', f'<{corresponding_value}', formula)`为`formula = re.sub(r'<14.5', f'<{corresponding_value}', formula)`，再次执行<br>
 我们就设置好了所有的函数，统计出了所有数据在所有区间范围的数量<br>
 ![](https://github.com/MengXing15646/Calculating-Design-Wave-Height-from-SMT-Data-in-Python-Hydrology/blob/master/222.png)<br>
