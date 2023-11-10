@@ -1,4 +1,5 @@
-# Calculating-Design-Wave-Height-from-SMT-Data-in-Python-Hydrology 使用python处理工程水文学中短期数据推求设计波高的方法
+# Calculating-Design-Wave-Height-from-SMT-Data-in-Python-Hydrology 
+# 使用python处理工程水文学中短期数据推求设计波高的方法
 工程水文学中推求设计波高往往需要处理数以万计的数据，使用py可以快速处理这些数据<br>
 这里以92-95年四年的短期数据为例，每日观测八次，大概一万一千个以上的风向波高数据，使用python处理excel数据并利用绘制散点图并拟和方程，同时使用origin pro绘制波高玫瑰图
 ## 1.手动将四年数据放置到同一张表中，并将所有数据从大到小排序
@@ -31,8 +32,8 @@ for row in sheet.iter_rows(min_row=1, max_row=sheet.max_row, min_col=column, max
 workbook.save('output.xlsx')
 ```
 其会在你上传文件的第9列的每一个格内粘贴`=COUNTIF(E2:E11592,"<15")-COUNTIF(E2:E11592,"<14.5`,接着我们可以使用其他文件修改范围数字,
-效果如图
-![](https://github.com/MengXing15646/Calculating-Design-Wave-Height-from-SMT-Data-in-Python-Hydrology/blob/master/1.png)
+效果如图<br>
+![](https://github.com/MengXing15646/Calculating-Design-Wave-Height-from-SMT-Data-in-Python-Hydrology/blob/master/1.png)<br>
 这样我们就在第I列粘贴了函数，但是所有函数均相同，我们接下来只需要修改函数的范围，即把`<15`修改成对应G列的数字，`<14.5`修改成对应H列的数字
 ## 修改函数范围
 ```python
@@ -61,5 +62,12 @@ for row in sheet.iter_rows(min_row=1, max_row=sheet.max_row, min_col=column_i, m
 # 保存更改
 workbook.save('output.xlsx')
 ```
-执行完毕后，`<15`修改成了对应G列的数字，再次执行，修改`column_g = 7`为`column_g = 8`,<br>
-修改`formula = re.sub(r'<15', f'<{corresponding_value}', formula)`为`formula = re.sub(r'<14.5', f'<{corresponding_value}', formula)`
+执行完毕后，`<15`修改成了对应G列的数字<br>
+接着，修改`column_g = 7`为`column_g = 8`,<br>
+修改`formula = re.sub(r'<15', f'<{corresponding_value}', formula)`为`formula = re.sub(r'<14.5', f'<{corresponding_value}', formula)`，再次执行<br>
+我们就设置好了所有的函数，统计出了所有数据在所有区间范围的数量<br>
+![](https://github.com/MengXing15646/Calculating-Design-Wave-Height-from-SMT-Data-in-Python-Hydrology/blob/master/222.png)<br>
+接下来我们仅需要使用excel表格的功能就能很简单的计算频率P和lgP,并使用excel绘制散点图拟和曲线<br>
+![](https://github.com/MengXing15646/Calculating-Design-Wave-Height-from-SMT-Data-in-Python-Hydrology/blob/master/3.png)
+![](https://github.com/MengXing15646/Calculating-Design-Wave-Height-from-SMT-Data-in-Python-Hydrology/blob/master/4.png)<br>
+
