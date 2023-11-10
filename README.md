@@ -35,7 +35,7 @@ workbook.save('output.xlsx')
 效果如图<br>
 ![](https://github.com/MengXing15646/Calculating-Design-Wave-Height-from-SMT-Data-in-Python-Hydrology/blob/master/1.png)<br>
 这样我们就在第I列粘贴了函数，但是所有函数均相同，我们接下来只需要修改函数的范围，即把`<15`修改成对应G列的数字，`<14.5`修改成对应H列的数字
-## 修改函数范围
+## 3.修改函数范围
 ```python
 import openpyxl
 import re
