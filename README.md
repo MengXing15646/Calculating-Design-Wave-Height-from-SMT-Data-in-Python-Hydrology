@@ -8,6 +8,7 @@
 且数据跨度较大，从0到15，且每0.1分一级，有一百多级，需要手动输入100多个函数<br>
 为此我们使用openpyxl库直接在一列中统一粘贴countif函数<br>
 首先安装openpyxl库<br>
-    pip install openpyxl
-
+```pip
+pip install openpyxl
+```
 
